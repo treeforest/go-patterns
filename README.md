@@ -1,2 +1,2 @@
-# design-mode
-design mode
+# 设计模式
+### 单例模式（Singleton Pattern）
