@@ -1,17 +1,19 @@
 package car
 
-import "fmt"
+import (
+	"fmt"
+	"github.com/treeforest/go-patterns/creational/builder"
+)
 
 type car struct {
-	Interface
-	color  Color
-	wheels Wheels
-	speed  Speed
+	color  builder.Color
+	wheels builder.Wheels
+	speed  builder.Speed
 }
 
 func (c *car) Drive() error {
 	fmt.Printf("A %s car with %s tires is going at %f ", c.color, c.wheels, c.speed)
-	if c.speed == MPH {
+	if c.speed == builder.MPH {
 		fmt.Println("MPH")
 	} else {
 		fmt.Println("KPH")

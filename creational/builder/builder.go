@@ -1,4 +1,4 @@
-package car
+package builder
 
 type Speed float64
 
