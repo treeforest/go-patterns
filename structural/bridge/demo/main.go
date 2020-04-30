@@ -8,17 +8,17 @@ import (
 func main() {
 	hw := brand.CreateHuaWei()
 
-	hw.SetSoft(new(soft.Game))
+	hw.SetSoft(soft.NewGame())
 	hw.Run()
 
-	hw.SetSoft(new(soft.AddressList))
+	hw.SetSoft(soft.NewAddressList())
 	hw.Run()
 
 	oppo := brand.CreateOppo()
 
-	oppo.SetSoft(new(soft.Game))
+	oppo.SetSoft(soft.NewGame())
 	oppo.Run()
 
-	oppo.SetSoft(new(soft.AddressList))
+	oppo.SetSoft(soft.NewAddressList())
 	oppo.Run()
 }

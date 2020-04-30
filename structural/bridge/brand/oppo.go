@@ -1,19 +1,18 @@
 package brand
 
 import (
-	"github.com/treeforest/go-patterns/structural/bridge/soft"
-	)
+	"github.com/treeforest/go-patterns/structural/bridge"
+)
 
 type oppo struct {
-	IBrand
-	soft soft.ISoft
+	soft bridge.ISoft
 }
 
-func CreateOppo() IBrand {
+func CreateOppo() bridge.IBrand {
 	return new(oppo)
 }
 
-func (op *oppo) SetSoft(soft soft.ISoft) {
+func (op *oppo) SetSoft(soft bridge.ISoft) {
 	// do something
 	op.soft = soft
 }

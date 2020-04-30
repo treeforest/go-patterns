@@ -1,12 +1,18 @@
 package soft
 
-import "fmt"
+import (
+	"fmt"
+	"github.com/treeforest/go-patterns/structural/bridge"
+)
 
-type Game struct {
-	ISoft
+type game struct {
 }
 
-func (game *Game)Run() error {
+func NewGame() bridge.ISoft {
+	return new(game)
+}
+
+func (game *game)Run() error {
 	fmt.Println("Run the handset game.")
 	return nil
 }

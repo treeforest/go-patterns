@@ -1,12 +1,18 @@
 package soft
 
-import "fmt"
+import (
+	"fmt"
+	"github.com/treeforest/go-patterns/structural/bridge"
+)
 
-type AddressList struct {
-	ISoft
+type addressList struct {
 }
 
-func (al *AddressList) Run() error {
+func NewAddressList() bridge.ISoft {
+	return new(addressList)
+}
+
+func (al *addressList) Run() error {
 	fmt.Println("Run the handset address list.")
 	return nil
 }
