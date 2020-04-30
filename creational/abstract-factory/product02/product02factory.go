@@ -1,28 +1,28 @@
 package product02
 
 import (
-	"github.com/treeforest/go-patterns/creational/abstract-factory/afbase"
+	"github.com/treeforest/go-patterns/creational/abstract-factory"
 	"sync"
 )
 
 type product02Factory struct {
-	afbase.AbstractFactory
+
 }
 
 var once sync.Once
 var instance *product02Factory = nil
 
-func CreateProduct02Factory() afbase.AbstractFactory {
+func CreateProduct02Factory() factory.Factory {
 	once.Do(func() {
 		instance = new(product02Factory)
 	})
 	return instance
 }
 
-func (p *product02Factory) CreateColor() afbase.Color {
+func (p *product02Factory) CreateColor() factory.Color {
 	return new(green)
 }
 
-func (p *product02Factory) CreateShape() afbase.Shape {
+func (p *product02Factory) CreateShape() factory.Shape {
 	return new(circle)
 }

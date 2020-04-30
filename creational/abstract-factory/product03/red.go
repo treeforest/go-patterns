@@ -1,12 +1,9 @@
 package product03
 
-import (
-	"github.com/treeforest/go-patterns/creational/abstract-factory/afbase"
-	"fmt"
-)
+import "fmt"
 
 type red struct {
-	afbase.Color
+
 }
 
 func (p *red) Fill() {
