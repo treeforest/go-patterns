@@ -11,5 +11,5 @@ func main() {
 
 	s2 := singleton.New()
 
-	fmt.Println("This is ", s2["this"])
+	fmt.Println("This is", s2["this"])
 }
