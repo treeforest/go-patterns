@@ -8,9 +8,9 @@ import (
 func main() {
 	p := pool.New(4)
 
-	for{
+	for {
 		select {
-		case obj := <- *p :
+		case obj := <-*p:
 			time.Sleep(time.Second * 1)
 			obj.Do("Hello")
 			*p <- obj
@@ -19,4 +19,3 @@ func main() {
 		}
 	}
 }
-

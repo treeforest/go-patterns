@@ -1,11 +1,10 @@
 package product02
 
 import (
-		"fmt"
+	"fmt"
 )
 
 type circle struct {
-
 }
 
 func (p *circle) Draw() {

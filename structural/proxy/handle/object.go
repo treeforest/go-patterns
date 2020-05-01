@@ -1,7 +1,7 @@
 package handle
 
 import (
-		"fmt"
+	"fmt"
 )
 
 // 实际进行数据处理的类
@@ -14,4 +14,3 @@ type object struct {
 func (obj *object) ObjDo(action string) {
 	fmt.Printf("I can, %s", action)
 }
-

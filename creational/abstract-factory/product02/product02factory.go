@@ -6,7 +6,6 @@ import (
 )
 
 type product02Factory struct {
-
 }
 
 var once sync.Once

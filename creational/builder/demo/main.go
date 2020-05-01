@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/treeforest/go-patterns/creational/builder/car"
 	"github.com/treeforest/go-patterns/creational/builder"
+	"github.com/treeforest/go-patterns/creational/builder/car"
 )
 
 func main() {

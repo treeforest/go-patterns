@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/treeforest/go-patterns/structural/flyweight/handle"
 	"fmt"
+	"github.com/treeforest/go-patterns/structural/flyweight/handle"
 )
 
 func main() {

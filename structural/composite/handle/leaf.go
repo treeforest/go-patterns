@@ -1,8 +1,8 @@
 package handle
 
 import (
-	"github.com/treeforest/go-patterns/structural/composite"
 	"fmt"
+	"github.com/treeforest/go-patterns/structural/composite"
 )
 
 // 叶子节点
@@ -16,14 +16,14 @@ func NewLeaf(name string) component.Component {
 	return p
 }
 
-func (p *leaf) Add(c  component.Component) error {
+func (p *leaf) Add(c component.Component) error {
 	fmt.Println("Cannot add to a leaf.")
 	return nil
 }
 
 func (p *leaf) Remove(c component.Component) error {
 	fmt.Println("Cannot remove from a leaf.")
-	return  nil
+	return nil
 }
 
 func (p *leaf) Display(depth int) {

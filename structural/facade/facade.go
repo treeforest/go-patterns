@@ -4,10 +4,10 @@ import "fmt"
 
 // 外观类
 type facade struct {
-	one *SubSystemOne
-	two *SubSystemTwo
+	one   *SubSystemOne
+	two   *SubSystemTwo
 	three *SubSystemThree
-	four *SubSystemFour
+	four  *SubSystemFour
 }
 
 func CreateFacade() *facade {

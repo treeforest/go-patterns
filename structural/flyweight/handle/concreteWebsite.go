@@ -1,8 +1,8 @@
 package handle
 
 import (
-	"github.com/treeforest/go-patterns/structural/flyweight"
 	"fmt"
+	"github.com/treeforest/go-patterns/structural/flyweight"
 )
 
 // 具体网站类

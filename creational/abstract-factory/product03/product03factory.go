@@ -1,12 +1,11 @@
 package product03
 
 import (
-	"sync"
 	"github.com/treeforest/go-patterns/creational/abstract-factory"
+	"sync"
 )
 
 type product03Factory struct {
-
 }
 
 var once sync.Once

@@ -8,11 +8,10 @@ func Square(n int) int {
 	return n * n
 }
 
-func main () {
+func main() {
 	o := CalculateDecorate(Double)
 	o(10)
 
 	o = CalculateDecorate(Square)
 	o(10)
 }
-

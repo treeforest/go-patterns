@@ -3,7 +3,7 @@ package handle
 import (
 	"github.com/treeforest/go-patterns/structural/flyweight"
 	"sync"
-	)
+)
 
 // 网站工厂类
 type webSiteFactory struct {
@@ -12,6 +12,7 @@ type webSiteFactory struct {
 
 var once sync.Once
 var instance *webSiteFactory
+
 func GetWebSiteFactory() flyweight.Factory {
 	once.Do(func() {
 		instance = new(webSiteFactory)
@@ -21,7 +22,7 @@ func GetWebSiteFactory() flyweight.Factory {
 }
 
 func (p *webSiteFactory) GetWebSiteCategory(key string) flyweight.WebSite {
-	if _,ok := p.mp[key]; !ok {
+	if _, ok := p.mp[key]; !ok {
 		p.mp[key] = createConcreteWebsite(key)
 	}
 	return p.mp[key]

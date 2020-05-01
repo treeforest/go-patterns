@@ -12,7 +12,7 @@ func NewGame() bridge.ISoft {
 	return new(game)
 }
 
-func (game *game)Run() error {
+func (game *game) Run() error {
 	fmt.Println("Run the handset game.")
 	return nil
 }

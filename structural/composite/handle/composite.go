@@ -1,14 +1,14 @@
 package handle
 
 import (
-	"github.com/treeforest/go-patterns/structural/composite"
 	"container/list"
 	"fmt"
+	"github.com/treeforest/go-patterns/structural/composite"
 )
 
 // 枝节点
 type composite struct {
-	name string
+	name     string
 	children *list.List
 }
 
@@ -31,7 +31,7 @@ func (p *composite) Remove(c component.Component) error {
 			break
 		}
 	}
-	return  nil
+	return nil
 }
 
 func (p *composite) Display(depth int) {
@@ -46,4 +46,3 @@ func (p *composite) Display(depth int) {
 		c.Display(depth + 2)
 	}
 }
-

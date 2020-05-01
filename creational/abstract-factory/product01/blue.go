@@ -2,10 +2,9 @@ package product01
 
 import (
 	"fmt"
-	)
+)
 
 type blue struct {
-
 }
 
 func (p *blue) Fill() {

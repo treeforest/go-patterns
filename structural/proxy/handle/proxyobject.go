@@ -1,14 +1,14 @@
 package handle
 
 import (
-	"sync"
 	"github.com/treeforest/go-patterns/structural/proxy"
+	"sync"
 )
 
 // 具备有拦截行为的代理类
 type proxyObject struct {
 	once sync.Once
-	obj *object
+	obj  *object
 }
 
 func NewProxyObject() proxy.IObject {

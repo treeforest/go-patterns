@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/treeforest/go-patterns/creational/factory-method/data"
 	"fmt"
+	"github.com/treeforest/go-patterns/creational/factory-method/data"
 )
 
 func main() {
