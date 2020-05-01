@@ -2,13 +2,13 @@ package data
 
 import (
 	"io"
+	"github.com/treeforest/go-patterns/creational/factory-method"
 )
 
 type diskStorage struct {
-	Store
 }
 
-func newDiskStorage() (Store, error) {
+func newDiskStorage() (fm.Store, error) {
 	return new(diskStorage), nil
 }
 

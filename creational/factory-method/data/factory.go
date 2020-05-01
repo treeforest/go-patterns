@@ -1,5 +1,7 @@
 package data
 
+import "github.com/treeforest/go-patterns/creational/factory-method"
+
 type StorageType int
 
 const (
@@ -8,7 +10,7 @@ const (
 	MemoryStorage
 )
 
-func NewStore(t StorageType) (s Store, err error) {
+func NewStore(t StorageType) (s fm.Store, err error) {
 	switch t {
 	case MemoryStorage:
 		return newMemoryStorage()

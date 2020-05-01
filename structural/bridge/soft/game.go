@@ -5,10 +5,11 @@ import (
 	"github.com/treeforest/go-patterns/structural/bridge"
 )
 
+// 游戏
 type game struct {
 }
 
-func NewGame() bridge.ISoft {
+func NewGame() bridge.Soft {
 	return new(game)
 }
 

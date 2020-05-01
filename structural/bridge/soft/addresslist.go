@@ -5,10 +5,11 @@ import (
 	"github.com/treeforest/go-patterns/structural/bridge"
 )
 
+// 通讯录
 type addressList struct {
 }
 
-func NewAddressList() bridge.ISoft {
+func NewAddressList() bridge.Soft {
 	return new(addressList)
 }
 

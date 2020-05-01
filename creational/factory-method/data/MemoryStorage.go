@@ -2,6 +2,7 @@ package data
 
 import (
 	"io"
+	"github.com/treeforest/go-patterns/creational/factory-method"
 )
 
 type memory struct {
@@ -27,10 +28,9 @@ func (m *memory) Close() error {
 }
 
 type memoryStorage struct {
-	Store
 }
 
-func newMemoryStorage() (Store, error) {
+func newMemoryStorage() (fm.Store, error) {
 	return new(memoryStorage), nil
 }
 

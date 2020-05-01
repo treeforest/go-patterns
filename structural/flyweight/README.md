@@ -1,8 +1,6 @@
 # Flyweight Pattern
 
-享元模式：运功共享技术有效的支持大量细粒度的对象。  
-
-![Flyweight](flyweight.jpg)
+享元模式：运功共享技术有效的支持大量细粒度的对象。
 
 # Implementation
 

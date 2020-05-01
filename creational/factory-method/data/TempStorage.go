@@ -1,12 +1,14 @@
 package data
 
-import "io"
+import (
+	"io"
+	"github.com/treeforest/go-patterns/creational/factory-method"
+)
 
 type tempStorage struct {
-	Store
 }
 
-func newTempStorage() (Store, error) {
+func newTempStorage() (fm.Store, error) {
 	return new(tempStorage), nil
 }
 

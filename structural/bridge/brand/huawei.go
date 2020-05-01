@@ -5,14 +5,14 @@ import (
 )
 
 type huawei struct {
-	soft bridge.ISoft
+	soft bridge.Soft
 }
 
-func CreateHuaWei() bridge.IBrand {
+func CreateHuaWei() bridge.Brand {
 	return new(huawei)
 }
 
-func (hw *huawei) SetSoft(soft bridge.ISoft) {
+func (hw *huawei) SetSoft(soft bridge.Soft) {
 	// do something
 	hw.soft = soft
 }

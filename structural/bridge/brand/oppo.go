@@ -5,14 +5,14 @@ import (
 )
 
 type oppo struct {
-	soft bridge.ISoft
+	soft bridge.Soft
 }
 
-func CreateOppo() bridge.IBrand {
+func CreateOppo() bridge.Brand {
 	return new(oppo)
 }
 
-func (op *oppo) SetSoft(soft bridge.ISoft) {
+func (op *oppo) SetSoft(soft bridge.Soft) {
 	// do something
 	op.soft = soft
 }

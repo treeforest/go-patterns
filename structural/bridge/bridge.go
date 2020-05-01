@@ -1,10 +1,10 @@
 package bridge
 
-type ISoft interface {
+type Soft interface {
 	Run() error
 }
 
-type IBrand interface {
-	SetSoft(soft ISoft)
+type Brand interface {
+	SetSoft(soft Soft)
 	Run()
 }
