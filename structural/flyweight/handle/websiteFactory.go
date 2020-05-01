@@ -5,7 +5,7 @@ import (
 	"sync"
 	)
 
-// 网站工程类
+// 网站工厂类
 type webSiteFactory struct {
 	mp map[string]flyweight.WebSite
 }
