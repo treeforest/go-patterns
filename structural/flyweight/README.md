@@ -2,7 +2,7 @@
 
 享元模式：运功共享技术有效的支持大量细粒度的对象。  
 
-![Flyweight](http://github.com/treeforest/go-patterns/tree/master/structural/flyweight/flyweight.jpg)
+![Flyweight](flyweight.jpg)
 
 # Implementation
 
