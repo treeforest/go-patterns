@@ -7,10 +7,9 @@ type Receiver interface {
 }
 
 type concreteReceiver struct {
-
 }
 
-func CreateReceiver() Receiver{
+func CreateReceiver() Receiver {
 	return new(concreteReceiver)
 }
 

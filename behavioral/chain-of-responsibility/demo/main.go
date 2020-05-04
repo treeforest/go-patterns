@@ -11,7 +11,7 @@ func main() {
 	zongjian.SetSuperior(zhongjingli)
 
 	// 客户端的申请都是由“经理”发起，实际谁来决策由具体管理类来处理，客户端不知道
-	req := handle.CreateRequest("请假","小菜请假", 1)
+	req := handle.CreateRequest("请假", "小菜请假", 1)
 	jinli.RequestApplications(req)
 
 	req2 := handle.CreateRequest("请假", "小菜请假", 4)

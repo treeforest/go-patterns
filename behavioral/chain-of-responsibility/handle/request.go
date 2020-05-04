@@ -4,8 +4,8 @@ import "github.com/treeforest/go-patterns/behavioral/chain-of-responsibility"
 
 // 请求
 type request struct {
-	typ string
-	num int
+	typ     string
+	num     int
 	content string
 }
 

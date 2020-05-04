@@ -1,8 +1,8 @@
 package data
 
 import (
-	"io"
 	"github.com/treeforest/go-patterns/creational/factory-method"
+	"io"
 )
 
 type memory struct {

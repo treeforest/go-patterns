@@ -6,7 +6,7 @@ import "github.com/treeforest/go-patterns/behavioral/chain-of-responsibility"
 type manager struct {
 	handler.Manager
 	superior handler.Manager
-	name string
+	name     string
 }
 
 func (m *manager) SetSuperior(superior handler.Manager) {
