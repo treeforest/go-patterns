@@ -21,3 +21,4 @@
 * Mediator Pattern 中介者模式(调停者模式)
 * Memento Pattern 备忘录模式
 * Observer Pattern 观察者模式
+* Registry Pattern 注册模式
