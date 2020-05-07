@@ -10,7 +10,7 @@ type Registry struct {
 	mp map[string]interface{}
 }
 
-// 根据所需要的实力类型，返回对应的实例。
+// 根据所需要的实例类型，返回对应的实例（单例）。
 func (r *Registry) GetInstance(obj interface{}) interface{}{
 	t := reflect.TypeOf(obj)
 	v := reflect.ValueOf(obj)
