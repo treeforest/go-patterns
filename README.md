@@ -17,3 +17,6 @@
 
 ## 三、行为模式（Behavioral Patterns）
 1. Chain of Responsibility Pattern 职责链模式
+2. Command Pattern 命令模式
+3. Mediator Pattern 中介者模式(调停者模式)
+4. Memento Pattern 备忘录模式
