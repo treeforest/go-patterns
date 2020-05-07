@@ -66,8 +66,8 @@ func main() {
 	}
 
 	// 注册一组观察者
-	n.Register(&eventObserver{id:1})
-	n.Register(&eventObserver{id:2})
+	n.Register(&eventObserver{id: 1})
+	n.Register(&eventObserver{id: 2})
 
 	e := &eventObserver{id: 3}
 	n.Register(e)

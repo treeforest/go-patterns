@@ -1,10 +1,10 @@
 package main
 
 import (
-	"sync"
-	"reflect"
 	"fmt"
-	)
+	"reflect"
+	"sync"
+)
 
 type Registry struct {
 	mu sync.RWMutex
@@ -12,7 +12,7 @@ type Registry struct {
 }
 
 // 根据所需要的实力类型，返回对应的实例。
-func (r *Registry) GetInstance(obj interface{}) interface{}{
+func (r *Registry) GetInstance(obj interface{}) interface{} {
 	t := reflect.TypeOf(obj)
 	v := reflect.ValueOf(obj)
 	objName := reflect.Indirect(v).Type().Name()
