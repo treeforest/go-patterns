@@ -22,3 +22,4 @@
 * Memento Pattern 备忘录模式
 * Observer Pattern 观察者模式
 * Registry Pattern 注册模式
+* State Pattern 状态模式
