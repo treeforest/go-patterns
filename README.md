@@ -1,6 +1,6 @@
 # Go Patterns
 
-## 行为模式 (Creational Patterns)
+## 创建型模式 (Creational Patterns)
 * Abstract Factory Pattern 抽象工厂模式
 * Builder Pattern 建造者模式
 * Factory Method Pattern 工厂方法模式
