@@ -1,9 +1,9 @@
 # Go Patterns
 
 ## 行为模式 (Creational Patterns)
-* Abstract Factory Pattern 抽象工厂
+* Abstract Factory Pattern 抽象工厂模式
 * Builder Pattern 建造者模式
-* Factory Method Pattern 工厂方法
+* Factory Method Pattern 工厂方法模式
 * Object Pool Pattern 对象池模式
 * Singleton Pattern 单例模式
 
@@ -23,3 +23,5 @@
 * Observer Pattern 观察者模式
 * Registry Pattern 注册模式
 * State Pattern 状态模式
+* Strategy Pattern 策略模式
+* Template Pattern 模板模式
