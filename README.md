@@ -7,7 +7,7 @@
 * Object Pool Pattern 对象池模式
 * Singleton Pattern 单例模式
 
-## 结构模式（Structural Patterns）
+## 结构型模式（Structural Patterns）
 * Bridge Pattern 桥接模式
 * Composite Pattern 组合模式
 * Decorator Pattern 装饰者模式
@@ -15,7 +15,7 @@
 * Proxy Pattern 代理模式
 * Flyweight Pattern 享元模式
 
-## 行为模式（Behavioral Patterns）
+## 行为型模式（Behavioral Patterns）
 * Chain of Responsibility Pattern 职责链模式
 * Command Pattern 命令模式
 * Mediator Pattern 中介者模式(调停者模式)
