@@ -1,55 +1,84 @@
 package main
 
-type ComputerPartVisitor interface {
-	Visit(ComputerPart)
-}
-
-type ComputerPartDisplayVisitor struct {
-
-}
+import (
+	"fmt"
+	)
 
 type (
-	ComputerPart interface {
-		Accept(vistor ComputerPartVisitor)
+	Visitor interface {
+		VisitConcreteElementA(element Element)
+		VisitConcreteElementB(element Element)
 	}
 
-	Computer struct {
-		parts []ComputerPart
+	Element interface {
+		Accept(visitor Visitor)
 	}
-
-	KeyBoard struct {}
-	Monitor struct {}
-	Mouse struct {}
 )
 
-func CreateComputer() ComputerPart {
-	c := new(Computer)
-	c.parts = make([]ComputerPart, 3)
-	append(c.parts, new(Mouse))
-	append(c.parts, new(Monitor))
-	append(c.parts, new(KeyBoard))
-	return c
+type (
+	ConcreteVisitor1 struct {}
+	ConcreteVisitor2 struct {}
+
+	ConcreteElementA struct {}
+	ConcreteElementB struct {}
+)
+
+func (v *ConcreteVisitor1) VisitConcreteElementA(e Element) {
+	fmt.Println("ConcreteVisitor1 visits ConcreteElementA.")
 }
 
-func (c *Computer) Accept(vistor ComputerPartVisitor) {
-	for i,_ := range c.parts{
-		c.parts[i].Accept(vistor)
+func (v *ConcreteVisitor1) VisitConcreteElementB(e Element) {
+	fmt.Println("ConcreteVisitor1 visit ConcreteElementB.")
+}
+
+func (v *ConcreteVisitor2) VisitConcreteElementA(e Element) {
+	fmt.Println("ConcreteVisitor2 visits ConcreteElementA.")
+}
+
+func (v *ConcreteVisitor2) VisitConcreteElementB(e Element) {
+	fmt.Println("ConcreteVisitor2 visit ConcreteElementB.")
+}
+
+func (e *ConcreteElementA) Accept(visitor Visitor) {
+	visitor.VisitConcreteElementA(e)
+}
+
+func (e *ConcreteElementB) Accept(visitor Visitor) {
+	visitor.VisitConcreteElementB(e)
+}
+
+type ObjectStructure struct {
+	mp map[Element]struct{}
+}
+
+func CreateObjectStructure() ObjectStructure {
+	return ObjectStructure{
+		mp: make(map[Element]struct{}),
 	}
-
 }
 
-func (m *Mouse) Accept(vistor ComputerPartVisitor) {
-
+func (o *ObjectStructure) Attach(element Element) {
+	o.mp[element] = struct{}{}
 }
 
-func (m *Monitor) Accept(vistor ComputerPartVisitor) {
-
+func (o *ObjectStructure) Detach(element Element) {
+	delete(o.mp, element)
 }
 
-func (k *KeyBoard) Accept(vistor ComputerPartVisitor) {
-
+func (o *ObjectStructure) Accept(visitor Visitor) {
+	for e, _ := range o.mp {
+		(e.(Element)).Accept(visitor)
+	}
 }
 
 func main() {
+	o := CreateObjectStructure()
+	o.Attach(new(ConcreteElementA))
+	o.Attach(new(ConcreteElementB))
 
+	v1 := new(ConcreteVisitor1)
+	v2 := new(ConcreteVisitor2)
+
+	o.Accept(v1)
+	o.Accept(v2)
 }
