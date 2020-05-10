@@ -25,3 +25,4 @@
 * State Pattern 状态模式
 * Strategy Pattern 策略模式
 * Template Pattern 模板模式
+# Visitor Pattern 访问者模式
