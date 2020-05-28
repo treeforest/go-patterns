@@ -26,3 +26,6 @@
 * Strategy Pattern 策略模式
 * Template Pattern 模板模式
 * Visitor Pattern 访问者模式
+
+## 同步模式（Concurrency Patterns）
+* Bounded Parallelism 限制性并行模式
