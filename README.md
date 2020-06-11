@@ -28,4 +28,8 @@
 * Visitor Pattern 访问者模式
 
 ## 同步模式（Concurrency Patterns）
-* Bounded Parallelism 限制性并行模式
+* Bounded Parallelism Pattern 限制性并行模式
+* Generator Pattern 生成器模式
+
+## 消息传递模式（Messaging Patterns）
+* Fan-In Messaging Pattern 扇入消息传递模式
