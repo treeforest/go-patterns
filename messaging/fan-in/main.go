@@ -13,7 +13,7 @@ func Merge(cs ...<-chan int) <-chan int {
 	out := make(chan int)
 
 	// 为每一个 cs 中的管道开启一个 send 协程，
-	// send 从 c 中拷贝值到 out 中，直到 c 关闭后，在调用 wg.Done.
+	// send 从 c 中拷贝值到 out 中，直到 c 关闭后，再调用 wg.Done.
 	send := func(c <- chan int) {
 		for n := range c {
 			out <- n
