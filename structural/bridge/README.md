@@ -6,122 +6,71 @@
 
 # Implementation
 
-示例实现了软件对不同品牌手机的松耦合的开发。
+Abstraction 将 client 的请求转发给它的 Implementor 对象 
 
-## Types
-
-```
-package bridge
-
-type Soft interface {
-	Run() error
-}
-
-type Brand interface {
-	SetSoft(soft Soft)
-	Run()
-}
-```
-
-## Defferent Implementations
+## Abstraction
 
 ```
-type huawei struct {
-	soft bridge.Soft
+// 定义抽象类的接口
+type Abstraction interface {
+	Operation()
 }
 
-func CreateHuaWei() bridge.Brand {
-	return new(huawei)
+// 维护一个指向 Implementor 类型对象的指针，并实现 Abstraction 接口
+type RefinedAbstraction struct {
+	imp Implementor
 }
 
-func (hw *huawei) SetSoft(soft bridge.Soft) {
-	// do something
-	hw.soft = soft
-}
-
-func (hw *huawei) Run() {
-	// do something
-	hw.soft.Run()
+func (o *RefinedAbstraction) Operation() {
+	o.imp.OperationImpl()
 }
 ```
 
-```
-type oppo struct {
-	soft bridge.Soft
-}
-
-func CreateOppo() bridge.Brand {
-	return new(oppo)
-}
-
-func (op *oppo) SetSoft(soft bridge.Soft) {
-	// do something
-	op.soft = soft
-}
-
-func (op *oppo) Run() {
-	// do something
-	op.soft.Run()
-}
-```
+## Implementor
 
 ```
-// 通讯录
-type addressList struct {
+// 实现类的接口，该接口不一定要与 Abstraction 一致，事实上两个接口可以完全不同。
+// 一般来讲，Implementor 接口仅提供基本操作，而 Abstraction 则定义了基于这些操作的较高层次的操作
+type Implementor interface {
+	OperationImpl()
 }
 
-func NewAddressList() bridge.Soft {
-	return new(addressList)
+// ConcreteImplementorA 与 ConcreteImplementorB 实现 Implementor 接口并定义它的具体实现
+type ConcreteImplementorA struct {}
+
+func (o *ConcreteImplementorA) OperationImpl() {
+	fmt.Println("ConcreteImplementorA OperationImpl")
 }
 
-func (al *addressList) Run() error {
-	fmt.Println("Run the handset address list.")
-	return nil
-}
-```
+type ConcreteImplementorB struct {}
 
-```
-// 游戏
-type game struct {
-}
-
-func NewGame() bridge.Soft {
-	return new(game)
-}
-
-func (game *game) Run() error {
-	fmt.Println("Run the handset game.")
-	return nil
+func (o *ConcreteImplementorB) OperationImpl() {
+	fmt.Println("ConcreteImplementorB OperationImpl")
 }
 ```
 
 # Usage
 
 ```
-hw := brand.CreateHuaWei()
+var abstraction Abstraction
 
-hw.SetSoft(soft.NewGame())
-hw.Run()
+abstraction = &RefinedAbstraction{
+    imp: new(ConcreteImplementorA),
+}
+abstraction.Operation()
 
-hw.SetSoft(soft.NewAddressList())
-hw.Run()
-
-oppo := brand.CreateOppo()
-
-oppo.SetSoft(soft.NewGame())
-oppo.Run()
-
-oppo.SetSoft(soft.NewAddressList())
-oppo.Run()
+abstraction = &RefinedAbstraction{
+    imp: new(ConcreteImplementorB),
+}
+abstraction.Operation()
 ```
 
 ```
-Run the handset game.
-Run the handset address list.
-Run the handset game.
-Run the handset address list.
+ConcreteImplementorA OperationImpl
+ConcreteImplementorB OperationImpl
 ```
 
 # Rules of Thumb
 
 桥接模式理解：实现系统可能有多角度分类，每一种分类有可能变化，那么就把这种多角度分离出来让它们独立变化，减少他们的耦合。
+也就是，Abstraction 与 Implementor下面可以类似树形往下扩展，而两边互不影响（只要都实现该"树根"Abstraction 与 Implementor的接口）

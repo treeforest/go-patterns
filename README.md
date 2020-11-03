@@ -8,6 +8,7 @@
 * Singleton Pattern 单例模式
 
 ## 结构型模式（Structural Patterns）
+* Adapter Pattern 适配器模式
 * Bridge Pattern 桥接模式
 * Composite Pattern 组合模式
 * Decorator Pattern 装饰者模式
