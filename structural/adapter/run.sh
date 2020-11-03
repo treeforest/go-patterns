@@ -1,0 +1,1 @@
+go run client.go adapter.go
